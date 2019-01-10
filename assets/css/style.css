@@ -1,0 +1,11 @@
+html, body {
+    height: 100%;
+}
+
+#mainC {
+    height: 100%;
+    background-image: url("../images/television.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
