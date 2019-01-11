@@ -1,11 +1,28 @@
-html, body {
+html, body, section.tv-box, div.tv {
     height: 100%;
 }
 
-#mainC {
+body {
+    background-color: black;
+}
+
+#tv {
+    min-height: 100%;
+}
+
+section.tv-box {
+    width: 70%;
+    margin: auto;
+    background-image: url("../images/orb.png");
+    background-blend-mode: screen;
+}
+
+div.tv-screen {
     height: 100%;
-    background-image: url("../images/television.png");
+    background-blend-mode: screen;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-size: cover;
+    overflow: hidden;
+    float: left;
+    z-index: 100;
 }
