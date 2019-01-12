@@ -3,26 +3,55 @@ html, body, section.tv-box, div.tv {
 }
 
 body {
-    background-color: black;
+    background-image: url("../images/paper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #tv {
-    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-section.tv-box {
-    width: 70%;
-    margin: auto;
-    background-image: url("../images/orb.png");
-    background-blend-mode: screen;
+#screen {
+    background-image: url("../images/screen.png");
+    position: absolute;
+    top: -10px;
+    left: -85px;
 }
 
-div.tv-screen {
-    height: 100%;
-    background-blend-mode: screen;
+#answer, #q-1, #q-2, #q-3,
+#q-4 {
+    position: absolute;
+    z-index: 2000;
+    left: 160px;
+}
+#answer{
+    top: 150px;
+}
+#q-1{
+    top: 250px;
+}
+#q-2{
+    top: 320px;
+}
+#q-3{
+    top: 390px;
+}
+#q-4{
+    top: 460px;
+}
+
+
+div.tv-box {
+    /* background-image: url("../images/orb.png"), url("../images/screen.png");
+    background-blend-mode: luminosity;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    background-position: -115px 0px;
     float: left;
-    z-index: 100;
+    z-index: 100; */
+    overflow: hidden;
+    position: relative;
 }

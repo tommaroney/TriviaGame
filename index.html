@@ -12,14 +12,22 @@
     <script src="assets/javascript/app.js"></script>
     <title>Document</title>
 </head>
-<body class="text-center">
-    <section class="tv-box">
-      <div class="tv-screen float-left">
-      <div class="tv">
-        <img id="tv" src="assets/images/television.png"/>
-      </div>
+<body class="text-center h-100">
+  <div class="container-fluid h-100">
+    <section class="row w-100 h-100">
+      <div class="col-10 offset-1 p-0 h-100 tv-box">
+        <div class="h-100 w-100">
+          <img src="assets/images/orb.png" id="screen" class="h-100 w-100">
+          <img src="assets/images/television.png" id="tv" class="h-100 w-100">
+          <h1><span id="answer" class="badge badge-secondary text-black shadow-lg">This is question Number how will this fit?</span></h1>
+          <h2><span id="q-1" class="badge badge-light text-dark">This is answer Number 1</span></h2>
+          <h2><span id="q-2" class="badge badge-light text-dark">This is answer Number 2</span></h2>
+          <h2><span id="q-3" class="badge badge-light text-dark">This is answer Number 3</span></h2>
+          <h2><span id="q-4" class="badge badge-light text-dark">This is answer Number 4</span></h2>
+        </div>
       </div>
     </section>
+  </div>
   <footer>
   </footer>
 </body>
