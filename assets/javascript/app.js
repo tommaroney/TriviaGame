@@ -196,6 +196,8 @@ $(document).ready(function() {
 
     function isEnd() {
         if(correctCount + incorrectCount >= 10) {
+            let correctCard = $("#correct-card");
+            let incorrectCard = $("#incorrect-card")
             $("body").empty().append(correctCard).append(incorrectCard);
             let endContainer = $("<div class='container jumbotron'>");
             for(i = 0; i < triviaHistory.length; i++) {
