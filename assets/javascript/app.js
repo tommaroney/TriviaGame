@@ -85,14 +85,14 @@ $(document).ready(function() {
 
         if(isEnd())
             return;
-        gameTimer = setInterval(startTimer, 1500);
+        gameTimer = setInterval(startTimer, 1000);
         try {
             await newBackdrop();
         } catch(err) {
             console.log(err);
         }
         
-        counter = 10;
+        counter = 15;
         shotClock.text(counter);
         shotClock.removeAttr("hidden");
 
@@ -196,8 +196,6 @@ $(document).ready(function() {
 
     function isEnd() {
         if(correctCount + incorrectCount >= 10) {
-            let correctCard = $("#correct-card");
-            let incorrectCard = $("#incorrect-card");
             $("body").empty().append(correctCard).append(incorrectCard);
             let endContainer = $("<div class='container jumbotron'>");
             for(i = 0; i < triviaHistory.length; i++) {
