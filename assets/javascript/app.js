@@ -89,7 +89,7 @@ $(document).ready(function() {
             console.log(err);
         }
         
-        counter = 30;
+        counter = 10;
         shotClock.text(counter);
         gameTimer = setInterval(startTimer, 1000);
         shotClock.removeAttr("hidden");
@@ -193,7 +193,8 @@ $(document).ready(function() {
     }
 
     function isEnd() {
-        if(correctCount + incorrectCount >= 2) {
+        if(correctCount + incorrectCount >= 10) {
+            clearInterval(gameTimer);
             $("body").empty();
             let endContainer = $("<div class='container jumbotron'>")
             for(i = 0; i < triviaHistory.length; i++) {
