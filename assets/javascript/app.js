@@ -83,6 +83,9 @@ $(document).ready(function() {
 
     async function newQuestions() {
 
+        if(isEnd())
+            return;
+        gameTimer = setInterval(startTimer, 1500);
         try {
             await newBackdrop();
         } catch(err) {
@@ -91,7 +94,6 @@ $(document).ready(function() {
         
         counter = 10;
         shotClock.text(counter);
-        gameTimer = setInterval(startTimer, 1000);
         shotClock.removeAttr("hidden");
 
         let currentRound;
@@ -175,7 +177,6 @@ $(document).ready(function() {
                 jQueryHTML.removeClass("badge-danger");
                 jQueryHTML.addClass("badge-light");
             }, 2000);
-            setTimeout(isEnd, 1500);
         })
     }
 
@@ -186,17 +187,19 @@ $(document).ready(function() {
             clearInterval(gameTimer);
             shotClock.attr("hidden", "true");
             incorrect.text(++incorrectCount);
+            if(isEnd())
+                return;
             newQuestions();
-            isEnd();
         }
         shotClock.text(counter--);
     }
 
     function isEnd() {
         if(correctCount + incorrectCount >= 10) {
-            clearInterval(gameTimer);
-            $("body").empty();
-            let endContainer = $("<div class='container jumbotron'>")
+            let correctCard = $("#correct-card");
+            let incorrectCard = $("#incorrect-card");
+            $("body").empty().append(correctCard).append(incorrectCard);
+            let endContainer = $("<div class='container jumbotron'>");
             for(i = 0; i < triviaHistory.length; i++) {
                 endContainer.append($("<div>").html(triviaHistory[i].question).addClass("mb-3"));
                 for(j = 0; j < triviaHistory[i].answers.length; j++) {
@@ -208,12 +211,15 @@ $(document).ready(function() {
                         eachAns.addClass("border border-info");
                     if(j === triviaHistory[i].answers.length - 1)
                         eachAns.addClass("mb-5");
-                    endContainer.append(eachAns);
+                    endContainer.append(eachAns).addClass("mt-3");
                 }
 
             }
 
             $("body").append(endContainer);
+            return true;
         }
+        else
+            return false;
     }
 });
