@@ -4,7 +4,7 @@ html, body, section.tv-box, div.tv {
 
 body {
     background-image: url("../images/paper.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
 }
 
@@ -21,28 +21,86 @@ body {
     left: -85px;
 }
 
-#answer, #q-1, #q-2, #q-3,
-#q-4 {
+#display {
     position: absolute;
-    z-index: 2000;
-    left: 160px;
-}
-#answer{
-    top: 150px;
-}
-#q-1{
-    top: 250px;
-}
-#q-2{
-    top: 320px;
-}
-#q-3{
-    top: 390px;
-}
-#q-4{
-    top: 460px;
+    top: 25%;
+    left: 8.5%;
+    overflow-wrap: normal;
+    word-wrap: normal;
 }
 
+#out-quest {
+    word-wrap: normal;
+}
+
+#question {
+    word-wrap: normal;
+}
+
+#screen-container {
+    position: absolute;
+}
+
+#timer {
+    position: fixed;
+    top: 1%;
+    left: 1%;
+}
+
+#correct-card {
+    position: fixed;
+    bottom: 1%;
+    left: 0%;
+}
+
+#incorrect-card {
+    position: fixed;
+    bottom: 1%;
+    right: 0%;
+}
+
+#a-1:hover, #a-2:hover, #a-3:hover,
+#a-4:hover {
+    cursor: pointer;
+}
+
+/* #question{
+    top: 150px;
+}
+#a-1{
+    top: 270px;
+}
+#a-2{
+    top: 340px;
+}
+#a-3{
+    top: 410px;
+}
+#a-4{
+    top: 480px;
+} */
+
+#start-pos {
+    position: absolute;
+    z-index: 2000;
+    left: 35%;
+    top: 35%;
+}
+
+#pwr-btn {
+    position: absolute;
+    z-index: 2000;
+    min-width: 4%;
+    min-height: 5%;
+    left: 88%;
+    top: 59%;
+    background-color: transparent;
+    border-radius: 40%;
+}
+
+#pwr-btn:hover {
+    background-color: rgba(255,255,255,.15);
+}
 
 div.tv-box {
     /* background-image: url("../images/orb.png"), url("../images/screen.png");
